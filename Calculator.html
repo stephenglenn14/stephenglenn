@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>HTML CALCULATOR</title>
+
+    <!-- For styling -->
+    <style>
+        table {
+            border: 1px solid black;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        input[type="button"] {
+            width: 100%;
+            padding: 20px 40px;
+            background-color: green;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+        }
+
+        input[type="text"] {
+            padding: 20px 30px;
+            font-size: 24px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            border: 2px solid black;
+        }
+    </style>
+
+    <!-- JavaScript code -->
+    <script>
+        function updateResult(value) {
+            var result = document.getElementById('result');
+            result.value += value;
+        }
+
+        function clearResult() {
+            var result = document.getElementById('result');
+            result.value = '';
+        }
+
+        function calculateResult() {
+            var result = document.getElementById('result');
+            result.value = eval(result.value);
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Create table -->
+    <table id="calcu">
+        <tr>
+            <td colspan="3">
+                <input type="text" id="result">
+            </td>
+            <td><input type="button" value="c" onclick="clearResult()"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="updateResult(1)"></td>
+            <td><input type="button" value="2" onclick="updateResult(2)"></td>
+            <td><input type="button" value="3" onclick="updateResult(3)"></td>
+            <td><input type="button" value="/" onclick="updateResult('/')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="updateResult(4)"></td>
+            <td><input type="button" value="5" onclick="updateResult(5)"></td>
+            <td><input type="button" value="6" onclick="updateResult(6)"></td>
+            <td><input type="button" value="*" onclick="updateResult('*')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="updateResult(7)"></td>
+            <td><input type="button" value="8" onclick="updateResult(8)"></td>
+            <td><input type="button" value="9" onclick="updateResult(9)"></td>
+            <td><input type="button" value="-" onclick="updateResult('-')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="0" onclick="updateResult(0)"></td>
+            <td><input type="button" value="." onclick="updateResult('.')"></td>
+            <td><input type="button" value="=" onclick="calculateResult()"></td>
+            <td><input type="button" value="+" onclick="updateResult('+')"></td>
+        </tr>
+    </table>
+</body>
+</html>
